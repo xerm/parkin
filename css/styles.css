@@ -1,29 +1,58 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background: #918E8B;
-    color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
 
-.logo img {
-    vertical-align: middle;
-    margin-right: 10px;
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  cursor: help;
 }
-.hero {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8vh 2rem;
+
+
+body {
+  background-color: #918E8B;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  overflow-x: hidden;
 }
-.hero h1 {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #ffffff;
 }
+
+.x {
+  display: flex;
+}
+
+.logos {
+  position: absolute;
+  max-width: 400;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%) ;
+}
+
+.futs {
+  
+  line-height: 1.2;
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+}
+
+.futs a:hover {
+  text-decoration: underline;
+}
+
+
+@custom-media --small-viewport (min-width: 481px);
+@custom-media --medium-viewport (min-width: 764px);
+@custom-media --large-viewport (min-width: 1024px);
